@@ -1,0 +1,46 @@
+The below output compares the performance of the different strategies to compute factorial on different n.
+
+The mem version performs best at almost each level (except for 1), basically after the warming
+step, the mem function only needs to lookup the value in the table. The elapsed time is constant as
+n increases.
+
+The loop function performs well generally. The elapsed time increases almost linearly as n increases.
+
+The recursive function is relatively slow comparing to the previous ones, with serious overhead
+issue (due to nested calls most likely) as n reaches higher level.
+
+The reduce function suffers a big overhead at the begining, after that the time increases less as n
+increases. Although it always performs worst than the mem and the loop versions, it eventually beats
+the recursive version at large n.
+
+
+Unit: microseconds
+                expr    min      lq      mean   median       uq     max neval
+   factorial_loop(1)  3.659  4.3085   5.68262   5.0735   5.8470  19.753   100
+ factorial_reduce(1) 85.789 94.8880 131.71574 109.4430 156.5730 881.354   100
+   factorial_func(1)  6.885  7.7240  10.52542   9.0500  11.0165  53.442   100
+    factorial_mem(1)  3.742  4.2825   6.23386   5.0870   6.1850  44.976   100
+Unit: microseconds
+                 expr    min       lq      mean   median       uq     max neval
+   factorial_loop(10)  5.549   6.6550   8.64901   7.6105   8.4375  47.091   100
+ factorial_reduce(10) 93.655 107.6445 153.05589 126.9350 157.3215 753.918   100
+   factorial_func(10) 40.943  47.5835  70.67870  60.7380  79.6720 198.107   100
+    factorial_mem(10)  4.032   4.9150   9.88023   5.7900   7.4610 165.333   100
+Unit: microseconds
+                 expr     min       lq      mean   median       uq     max neval
+   factorial_loop(20)   6.823   7.7465  10.59309   9.2410  10.2185  48.358   100
+ factorial_reduce(20) 137.803 150.9150 202.15928 186.6545 237.2870 577.319   100
+   factorial_func(20)  79.276  83.3640 118.99671 101.2470 120.0075 794.706   100
+    factorial_mem(20)   3.796   4.3210   8.19826   5.0420   6.5495  64.780   100
+Unit: microseconds
+                 expr     min       lq      mean   median       uq     max neval
+   factorial_loop(50)  11.832  13.3745  16.47313  14.1565  15.8490  51.784   100
+ factorial_reduce(50) 158.881 181.2140 220.75293 199.4765 246.5995 480.885   100
+   factorial_func(50) 210.213 227.8785 264.71121 249.5605 285.4475 961.555   100
+    factorial_mem(50)   3.928   4.5935   7.73513   5.1835   6.9400 196.289   100
+Unit: microseconds
+                  expr     min       lq      mean   median      uq      max neval
+   factorial_loop(100)  19.466  21.2425  27.20429  22.5155  23.750  112.758   100
+ factorial_reduce(100) 195.640 217.3020 274.17650 270.8835 299.737 1055.870   100
+   factorial_func(100) 532.573 558.2275 590.96862 571.7660 603.433 1262.803   100
+    factorial_mem(100)   3.725   4.3875  20.49988   5.3025   6.575  779.658   100
