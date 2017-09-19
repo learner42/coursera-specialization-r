@@ -1,0 +1,3 @@
+[submodule "r-packages/final"]
+	path = r-packages/final
+	url = https://learner42@github.com/learner42/CourseraRpackagesFinal.git
