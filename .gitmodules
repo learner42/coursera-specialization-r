@@ -1,3 +1,6 @@
 [submodule "r-packages/final"]
 	path = r-packages/final
 	url = https://learner42@github.com/learner42/CourseraRpackagesFinal.git
+[submodule "r-daata-visualization/final"]
+	path = r-daata-visualization/final
+	url = https://learner42@github.com/learner42/CourseraRdataVisualizationFinal.git
