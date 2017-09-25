@@ -4,3 +4,6 @@
 [submodule "r-daata-visualization/final"]
 	path = r-daata-visualization/final
 	url = https://learner42@github.com/learner42/CourseraRdataVisualizationFinal.git
+[submodule "r-capstone"]
+	path = r-capstone
+	url = https://learner42@github.com/learner42/CourseraRcapstone.git
